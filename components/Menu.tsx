@@ -1,3 +1,5 @@
+"use client"
+
 import { Layout, Menu, Typography, Image } from "antd"
 import {
   QuestionCircleOutlined,
@@ -11,7 +13,37 @@ const { Header } = Layout
 const { Item } = Menu
 const { Title } = Typography
 
-export default function MenuAnt() {
+const menuItems = [
+  {
+    key: "Ativos",
+    icon: <UserOutlined />,
+    label: (
+      <Link href="/cad/ativos" className="text-inherit">
+        Ativos
+      </Link>
+    ),
+  },
+  {
+    key: "Inativos",
+    icon: <UserDeleteOutlined />,
+    label: (
+      <Link href="/cad/inativos" className="text-inherit">
+        Inativos
+      </Link>
+    ),
+  },
+  {
+    key: "Pensionistas",
+    icon: <ProfileOutlined />,
+    label: (
+      <Link href="/cad/pensionistas" className="text-inherit">
+        Pensionistas
+      </Link>
+    ),
+  },
+]
+
+export default function HeaderMenu() {
   return (
     <Layout>
       <Header className="p-0 m-0 h-full">
@@ -37,23 +69,8 @@ export default function MenuAnt() {
             mode="horizontal"
             selectedKeys={[]}
             className="w-5/6 border-0 flex justify-center"
-          >
-            <Item key="1" icon={<UserOutlined />}>
-              <Link href="/cad/ativos" className="text-inherit">
-                Ativos
-              </Link>
-            </Item>
-            <Item key="2" icon={<UserDeleteOutlined />}>
-              <Link href="/cad/inativos" className="text-inherit">
-                Inativos
-              </Link>
-            </Item>
-            <Item key="3" icon={<ProfileOutlined />}>
-              <Link href="/cad/pensionistas" className="text-inherit">
-                Pensionistas
-              </Link>
-            </Item>
-          </Menu>
+            items={menuItems}
+          />
           <Item
             key="4"
             className="no-underline"

@@ -18,7 +18,7 @@ import {
 } from "@/contexts/PensionerContext"
 import { TextFieldContext } from "@/contexts/TextfieldContext"
 
-import { useLocation } from "react-router-dom"
+import { useRouter } from "next/router"
 
 import { Category } from "./SubComponents/types/essentialTypes"
 
@@ -39,7 +39,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
 
-  const { pathname } = useLocation()
+  const { pathname } = useRouter()
 
   const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)

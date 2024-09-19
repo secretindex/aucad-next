@@ -9,6 +9,8 @@ import {
 } from "@ant-design/icons"
 import Link from "next/link"
 
+import "@/components/styles/menu.css"
+
 const { Title } = Typography
 
 const menuItemsSecond = [
@@ -45,12 +47,26 @@ const menuItemsOne = [
   {
     key: "Menu",
     label: (
-      <Title style={{ margin: 0, padding: 0 }} className="flex items-center" level={1}>
-        <Link href="/">
+      <Title
+        style={{
+          margin: 0,
+          padding: 0,
+          backgroundColor: "transparent",
+          color: "inherit",
+        }}
+        className="flex items-center"
+        level={1}
+      >
+        <Link
+          href="/"
+          style={{ backgroundColor: "transparent", color: "inherit" }}
+          className="flex items-center"
+        >
           <Image
             src={"/assets/aucad.svg"}
             alt="Aucad Logo"
-            
+            style={{ width: "100px" }}
+            preview={false}
           />
         </Link>
       </Title>
@@ -77,7 +93,7 @@ export default function HeaderMenu() {
         <Menu
           mode="horizontal"
           selectedKeys={[]}
-          className="flex flex-grow w-auto"
+          className="flex flex-grow justify-start items-center w-auto disable-underscore"
           items={menuItemsOne}
         />
         <Menu
@@ -89,7 +105,7 @@ export default function HeaderMenu() {
         <Menu
           mode="horizontal"
           selectedKeys={[]}
-          className="border-0 flex flex-grow w-auto justify-center"
+          className="border-0 flex flex-grow w-auto justify-end"
           items={menuThird}
         />
       </header>

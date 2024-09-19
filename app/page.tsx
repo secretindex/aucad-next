@@ -14,10 +14,7 @@ export default function Home() {
 
   return (
     <section
-      style={{
-        height: "100%",
-      }}
-      className={`flex flex-col gap-4 justify-center items-center`}
+      className={`flex h-full flex-col gap-4 justify-center items-center`}
     >
       <header className="text-center">
         <Title level={2} style={{ fontSize: "3rem" }}>

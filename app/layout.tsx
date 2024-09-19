@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import HeaderMenu from "@/components/Menu"
 import { AntdRegistry } from "@ant-design/nextjs-registry"
 
+import { ConfigProvider } from "antd"
+
 import localFont from "next/font/local"
 import "./globals.css"
 
@@ -33,10 +35,20 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} h-screen antialiased`}
       >
         <AntdRegistry>
-          <main className="min-h-screen">
-            <HeaderMenu />
-            {children}
-          </main>
+          <ConfigProvider
+            componentSize="large"
+            theme={{
+              token: {
+                colorPrimary: "#26a69a",
+                fontFamily: "Rubik",
+              },
+            }}
+          >
+            <main className="h-full">
+              <HeaderMenu />
+              {children}
+            </main>
+          </ConfigProvider>
         </AntdRegistry>
       </body>
     </html>

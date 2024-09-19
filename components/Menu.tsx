@@ -9,11 +9,9 @@ import {
 } from "@ant-design/icons"
 import Link from "next/link"
 
-const { Header } = Layout
-const { Item } = Menu
 const { Title } = Typography
 
-const menuItems = [
+const menuItemsSecond = [
   {
     key: "Ativos",
     icon: <UserOutlined />,
@@ -43,45 +41,58 @@ const menuItems = [
   },
 ]
 
+const menuItemsOne = [
+  {
+    key: "Menu",
+    label: (
+      <Title style={{ margin: 0, padding: 0 }} className="flex items-center" level={1}>
+        <Link href="/">
+          <Image
+            src={"/assets/aucad.svg"}
+            alt="Aucad Logo"
+            
+          />
+        </Link>
+      </Title>
+    ),
+  },
+]
+
+const menuThird = [
+  {
+    key: "about",
+    icon: <QuestionCircleOutlined />,
+    label: (
+      <Link href="/about" className="text-inherit">
+        Sobre
+      </Link>
+    ),
+  },
+]
+
 export default function HeaderMenu() {
   return (
     <Layout>
-      <Header className="p-0 m-0 h-full">
+      <header className="w-full flex flex-row justify-between p-0 m-0">
         <Menu
           mode="horizontal"
           selectedKeys={[]}
-          className="flex items-center justify-between px-2 m-0"
-          style={{
-            lineHeight: "3rem",
-          }}
-        >
-          <Title style={{ margin: 0 }} className="flex items-center" level={1}>
-            <Link href="/">
-              <Image
-                src={"@/assets/aucad horizontal.svg"}
-                preview={false}
-                alt="Aucad Logo"
-                width={"100px"}
-              ></Image>
-            </Link>
-          </Title>
-          <Menu
-            mode="horizontal"
-            selectedKeys={[]}
-            className="w-5/6 border-0 flex justify-center"
-            items={menuItems}
-          />
-          <Item
-            key="4"
-            className="no-underline"
-            icon={<QuestionCircleOutlined />}
-          >
-            <Link href="/about" className="text-inherit">
-              Sobre
-            </Link>
-          </Item>
-        </Menu>
-      </Header>
+          className="flex flex-grow w-auto"
+          items={menuItemsOne}
+        />
+        <Menu
+          mode="horizontal"
+          selectedKeys={[]}
+          className="border-0 w-auto flex flex-grow justify-center"
+          items={menuItemsSecond}
+        />
+        <Menu
+          mode="horizontal"
+          selectedKeys={[]}
+          className="border-0 flex flex-grow w-auto justify-center"
+          items={menuThird}
+        />
+      </header>
     </Layout>
   )
 }

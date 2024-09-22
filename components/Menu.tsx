@@ -6,6 +6,7 @@ import {
   ProfileOutlined,
   UserDeleteOutlined,
   UserOutlined,
+  LoginOutlined
 } from "@ant-design/icons"
 import Link from "next/link"
 
@@ -84,6 +85,10 @@ const menuThird = [
       </Link>
     ),
   },
+  {
+    key: "Login",
+    icon: <LoginOutlined />
+  }
 ]
 
 export default function HeaderMenu() {

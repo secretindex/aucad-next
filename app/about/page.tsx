@@ -1,10 +1,14 @@
-import { Typography, Layout, List } from "antd";
-import Link from "next/link";
+"use client"
 
-import { GithubOutlined } from "@ant-design/icons";
+// later: remove every antd component except from register page
 
-const { Content } = Layout;
-const { Text, Title } = Typography;
+import { Typography, Layout, List } from "antd"
+import Link from "next/link"
+
+import { GithubOutlined } from "@ant-design/icons"
+
+const { Content } = Layout
+const { Text, Title } = Typography
 
 const About = () => {
   return (
@@ -54,7 +58,7 @@ const About = () => {
         </Link>
       </Content>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

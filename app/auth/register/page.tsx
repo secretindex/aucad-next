@@ -1,16 +1,17 @@
-import { Layout, Flex, Typography } from "antd"
+"use client"
 
-const { Content } = Layout
-
-const { Title } = Typography
+import { useState } from "react"
 
 const Register = () => {
+  const [email, setEmail] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
+
   return (
-    <Flex>
+    <section>
       <div className="rounded-md p-4 bg-slate-50">
-        <Title>Register</Title>
+        <h1>Register</h1>
       </div>
-    </Flex>
+    </section>
   )
 }
 
